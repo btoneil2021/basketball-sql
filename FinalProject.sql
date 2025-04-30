@@ -50,7 +50,6 @@ CREATE TABLE Players (
     P_ID VARCHAR(8) PRIMARY KEY NOT NULL, 
     P_Name VARCHAR(30),
     P_Position VARCHAR(15), 
-    Pos_ID VARCHAR(4), 
     Height INT, 
     Weight INT,
     International INT,
