@@ -31,7 +31,7 @@ CREATE TABLE Stats (
     FT_Percentage DECIMAL(4,3),        -- FT%
     Rebounds DECIMAL(4,1),             -- REB (Average)
     Assists DECIMAL(4,1),              -- AST (Average)
-    Blocks DECIMAL(3,1),               -- BLK (Average)
+    P_Blocks DECIMAL(3,1),               -- BLK (Average)
     Steals DECIMAL(3,1),               -- STL (Average)
     Turnovers DECIMAL(3,1),            -- TO (Average)
     Fouls DECIMAL(3,1),                -- PF (Average)
@@ -51,7 +51,7 @@ CREATE TABLE Players (
     P_Name VARCHAR(30),
     P_Position VARCHAR(15), 
     Pos_ID VARCHAR(4), 
-    Height VARCHAR(4), 
+    Height INT, 
     Weight INT,
     International INT,
     P_Rank INT, 
@@ -75,3 +75,5 @@ CREATE TABLE PlayersStats (
     FOREIGN KEY (P_ID) REFERENCES Players(P_ID),
     FOREIGN KEY (Stats_ID) REFERENCES Stats(Stats_ID)
 );
+
+-- add, delete, edit, modify and print reports (select), aggregate query
