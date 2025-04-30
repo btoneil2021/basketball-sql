@@ -15,22 +15,6 @@ CREATE TABLE College (
     DIV VARCHAR(3)
 );
 
-CREATE TABLE Players (
-    P_ID VARCHAR(8) PRIMARY KEY NOT NULL, 
-    P_Name VARCHAR(30),
-    P_Position VARCHAR(15), 
-    Pos_ID VARCHAR(4), 
-    Height VARCHAR(4), 
-    Weight INT,
-    WentToCollege INT,
-    P_Rank INT, 
-    Team VARCHAR(35), 
-    C_ID VARCHAR(4), 
-    Birth_date DATE, 
-    FOREIGN KEY (C_ID) REFERENCES College(C_ID), 
-    FOREIGN KEY (Pos_ID) REFERENCES Positions(Pos_ID) 
-);
-
 CREATE TABLE Stats (
     Stats_ID VARCHAR(8) PRIMARY KEY NOT NULL,
     Player_Name VARCHAR(30), 
@@ -60,6 +44,20 @@ CREATE TABLE Stats (
     Usage_Percentage DECIMAL(4,1),         -- USG%
     Assists_To_Usage_Ratio DECIMAL(4,2),   -- AST/USG
     Assists_To_Turnovers_Ratio DECIMAL(4,2) -- AST/TO
+);
+
+CREATE TABLE Players (
+    P_ID VARCHAR(8) PRIMARY KEY NOT NULL, 
+    P_Name VARCHAR(30),
+    P_Position VARCHAR(15), 
+    Pos_ID VARCHAR(4), 
+    Height VARCHAR(4), 
+    Weight INT,
+    International INT,
+    P_Rank INT, 
+    Team VARCHAR(35), 
+    C_ID VARCHAR(4), 
+    Birth_date DATE
 );
 
 CREATE TABLE PlayersColleges (
