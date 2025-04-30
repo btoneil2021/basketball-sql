@@ -22,9 +22,9 @@ CREATE TABLE Players (
     Pos_ID VARCHAR(4), 
     Height VARCHAR(4), 
     Weight INT,
-    First_Round INT,
+    WentToCollege INT,
     P_Rank INT, 
-    College VARCHAR(35), 
+    Team VARCHAR(35), 
     C_ID VARCHAR(4), 
     Birth_date DATE, 
     FOREIGN KEY (C_ID) REFERENCES College(C_ID), 
@@ -75,5 +75,5 @@ CREATE TABLE PlayersStats (
     Stats_ID VARCHAR(4), 
     PRIMARY KEY (P_ID, Stats_ID), 
     FOREIGN KEY (P_ID) REFERENCES Players(P_ID),
-    FOREIGN KEY (Stats_ID) REFERENCES Positions(Stats_ID)
+    FOREIGN KEY (Stats_ID) REFERENCES Stats(Stats_ID)
 );
