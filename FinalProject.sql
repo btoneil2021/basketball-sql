@@ -11,7 +11,7 @@ CREATE TABLE College (
     C_ID VARCHAR(4) PRIMARY KEY NOT NULL,
     College_Name VARCHAR(35),
     College_State VARCHAR(20), 
-    Conference VARCHAR(4),
+    Conference VARCHAR(30),
     DIV VARCHAR(3)
 );
 
