@@ -15,16 +15,6 @@ CREATE TABLE College (
     DIV VARCHAR(3)
 );
 
-CREATE TABLE Stats (
-    Stats_ID VARCHAR(4) PRIMARY KEY NOT NULL, 
-    Player_Name VARCHAR(30), 
-    P_PTS DECIMAL(4,2), 
-    P_Rebounds DECIMAL(3,2), 
-    P_Assists DECIMAL(3,2), 
-    P_Steals DECIMAL(3,2),
-    P_Blocks DECIMAL(3,2), 
-);
-
 CREATE TABLE Players (
     P_ID VARCHAR(8) PRIMARY KEY NOT NULL, 
     P_Name VARCHAR(30),
@@ -32,11 +22,11 @@ CREATE TABLE Players (
     Pos_ID VARCHAR(4), 
     Height VARCHAR(4), 
     Weight INT,
-
+    First_Round INT,
     P_Rank INT, 
     College VARCHAR(35), 
     C_ID VARCHAR(4), 
-    Start_date DATE, 
+    Birth_date DATE, 
     FOREIGN KEY (C_ID) REFERENCES College(C_ID), 
     FOREIGN KEY (Pos_ID) REFERENCES Positions(Pos_ID) 
 );
@@ -44,8 +34,6 @@ CREATE TABLE Players (
 CREATE TABLE Stats (
     Stats_ID VARCHAR(8) PRIMARY KEY NOT NULL,
     Player_Name VARCHAR(30), 
-
-    -- 2024-2025 Per Game Averages
     Games_Played INT,               
     Minutes_Per_Game DECIMAL(4,1),     
     FGM INT,                          
@@ -71,11 +59,9 @@ CREATE TABLE Stats (
     Projected_NBA_3P_Percentage DECIMAL(4,3), -- Proj NBA 3P%
     Usage_Percentage DECIMAL(4,1),         -- USG%
     Assists_To_Usage_Ratio DECIMAL(4,2),   -- AST/USG
-    Assists_To_Turnovers_Ratio DECIMAL(4,2), -- AST/TO
-
-    -- Foreign Key constraint linking Stats directly to Players
-    FOREIGN KEY (P_ID) REFERENCES Players(P_ID)
+    Assists_To_Turnovers_Ratio DECIMAL(4,2) -- AST/TO
 );
+
 CREATE TABLE PlayersColleges (
     P_ID VARCHAR(8), 
     C_ID VARCHAR(4), 
