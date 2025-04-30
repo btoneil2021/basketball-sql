@@ -1,5 +1,11 @@
--- Layne Lenkowski, Mel, Ben O'Neil
+-- Layne Lenkowski, Melissa Silva, Ben O'Neil
 -- Final Project - College Basketball Report
+
+drop table College cascade constraints;
+drop table Positions cascade constraints;
+drop table Players cascade constraints;
+drop table PlayersColleges cascade constraints;
+drop table PlayersPositions cascade constraints;
 
 CREATE TABLE College (
     C_ID VARCHAR(4) PRIMARY KEY NOT NULL,
@@ -9,7 +15,7 @@ CREATE TABLE College (
     DIV VARCHAR(3) -- 
 );
 
-CREATE TABLE Positions (
+CREATE TABLE Stats (
     Pos_ID VARCHAR(4) PRIMARY KEY NOT NULL, 
     Position_Name VARCHAR(35), 
     Num_Players VARCHAR(3)
