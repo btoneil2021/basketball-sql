@@ -1,7 +1,8 @@
 # basketball-sql
 Databases Final Project
 
-Condensed is fake. Normal is the real one
+- Condensed is FAKE. Normal is the real one
+- College Extraction Test is Ben trying to see if he can map two different websites together
 
 TO-DO (for Ben at least)
 - Scrape College Data from that one site I found
