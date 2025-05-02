@@ -12,7 +12,7 @@ CREATE TABLE College (
     College_Name VARCHAR(35),
     College_State VARCHAR(20), 
     Conference VARCHAR(30),
-    DIV VARCHAR(3)
+    Division VARCHAR(3)
 );
 
 CREATE TABLE Stats (
