@@ -76,3 +76,8 @@ CREATE TABLE PlayersStats (
 );
 
 -- add, delete, edit, modify and print reports (select), aggregate query
+
+-- Output Query for players example
+INSERT INTO Stats VALUES ('0000001', 33, 29.0, 5.8, 10.7, .543, 0.8, 2.7, .292, 3.1, 4.1, .748, 6.9, 0.9, 1.0, 1.0, 1.1, 2.4, 15.4, .612, .580, .253, .384, .339, 23.5, 0.29, 0.78);
+
+SELECT * FROM Stats;
