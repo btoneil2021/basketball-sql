@@ -17,17 +17,17 @@ CREATE TABLE College (
 
 CREATE TABLE Stats (
     Stats_ID VARCHAR(8) PRIMARY KEY NOT NULL,
-    Player_Name VARCHAR(30), 
+    -- Player_Name VARCHAR(30), This is not needed in stats, we already have stats_id and the spine table
     Games_Played INT,               
     Minutes_Per_Game DECIMAL(4,1),     
-    FGM INT,                          
-    FGA INT,                          
+    FGM_Ave DECIMAL(3,1),
+    FGA_Ave DECIMAL(3,1),                          
     FG_Percentage DECIMAL(4,3),        -- FG%
-    Three_PM INT,                      -- 3-Pointers Made (from 3PM-3PA)
-    Three_PA INT,                      -- 3-Pointers Attempted (from 3PM-3PA)
+    Three_PM_Ave DECIMAL(3,1),                  -- 3-Pointers Made (from 3PM-3PA)
+    Three_PA_Ave DECIMAL(3,1),                      -- 3-Pointers Attempted (from 3PM-3PA)
     Three_P_Percentage DECIMAL(4,3),   -- 3P%
-    FTM INT,                           -- Free Throws Made (from FTM-FTA)
-    FTA INT,                           -- Free Throws Attempted (from FTM-FTA)
+    FTM_Ave DECIMAL(3,1),                        -- Free Throws Made (from FTM-FTA)
+    FTA_Ave DECIMAL(3,1),                           -- Free Throws Attempted (from FTM-FTA)
     FT_Percentage DECIMAL(4,3),        -- FT%
     Rebounds DECIMAL(4,1),             -- REB (Average)
     Assists DECIMAL(4,1),              -- AST (Average)
