@@ -10,9 +10,10 @@ drop table PlayersStats cascade constraints;
 CREATE TABLE College (
     C_ID VARCHAR(4) PRIMARY KEY NOT NULL,
     College_Name VARCHAR(35),
+    College_City VARCHAR(20),
     College_State VARCHAR(20), 
     Conference VARCHAR(30),
-    Division VARCHAR(3)
+    Division VARCHAR(10)
 );
 
 CREATE TABLE Stats (
@@ -50,12 +51,12 @@ CREATE TABLE Players (
     P_ID VARCHAR(8) PRIMARY KEY NOT NULL, 
     P_Name VARCHAR(30),
     P_Position VARCHAR(15), 
-    Height INT, 
-    Weight INT,
+    Height_In_Inches INT, 
+    Weight_In_lbs INT,
     International INT,
     P_Rank INT, 
     Team VARCHAR(35), 
-    C_ID VARCHAR(4), 
+    -- C_ID VARCHAR(4)  don't need this either, spine table for this
     Birth_date DATE
 );
 
@@ -76,6 +77,14 @@ CREATE TABLE PlayersStats (
 );
 
 -- add, delete, edit, modify and print reports (select), aggregate query
+
+insert into Stats values ('00000000', 33, 29.0, 5.8, 10.7, .543, 0.8, 2.7, .292, 3.1, 4.1, .748, 6.9, 0.9, 1.0, 1.0, 1.1, 2.4, 15.4, .612, .580, .253, .384, .339, 23.5, 0.29, 0.78);
+insert into Players values ('00000000', 'Asa Newell', 'PF', 82, 205, 0, 10, 'Georgia', '2005-10-05');
+insert into College values ('GEOS', 'Georgia Southern University', 'Statesboro', 'Georgia', 'Sun Belt Conference', 'NCAA D1');
+
+select * from stats;
+select * from players;
+select * from college;
 
 -- Output Query for players example
 -- add, delete, edit, modify and print reports (select), aggregate query
