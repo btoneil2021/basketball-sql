@@ -12,7 +12,7 @@ CREATE TABLE College (
     College_Name VARCHAR(35),
     College_City VARCHAR(20),
     College_State VARCHAR(20), 
-    Conference VARCHAR(30),
+    Conference VARCHAR(32),
     Division VARCHAR(10)
 );
 
@@ -81,7 +81,7 @@ CREATE TABLE PlayersStats (
 insert into College values ('DUKE', 'Duke University', 'Durham', 'North Carolina', 'Atlantic Coast Conference', 'NCAA D1');
 insert into College values ('RUTG', 'Rutgers University', 'Piscataway', 'New Jersey', 'Big Ten Conference', 'NCAA D1');
 insert into College values ('BAYL', 'Baylor University', 'Waco', 'Texas', 'Big 12 Conference', 'NCAA D1');
-insert into College values ('TEXS', 'Texas A&M University', 'College Station', 'Texas', 'Southeastern Conference', 'NCAA D1');
+insert into College values ('TEXS', 'Texas A'||chr(38)||'M University', 'College Station', 'Texas', 'Southeastern Conference', 'NCAA D1');
 insert into College values ('OKLS', 'Oklahoma State University', 'Stillwater', 'Oklahoma', 'Big 12 Conference', 'NCAA D1');
 insert into College values ('LOYA', 'Loyola University Maryland', 'Baltimore', 'Maryland', 'Patriot League', 'NCAA D1');
 insert into College values ('GEOS', 'Georgia Southern University', 'Statesboro', 'Georgia', 'Sun Belt Conference', 'NCAA D1');
@@ -95,9 +95,9 @@ insert into College values ('GEOO', 'Georgetown University', 'Washington', 'Dist
 insert into College values ('SAIS', 'Saint Josephs University', 'Philadelphia', 'Pennsylvania', 'Atlantic 10 Conference', 'NCAA D1');
 insert into College values ('CENU', 'Central Michigan University', 'Mount Pleasant', 'Michigan', 'Mid-American Conference', 'NCAA D1');
 insert into College values ('COLV', 'Colorado State University', 'Fort Collins', 'Colorado', 'Mountain West Conference', 'NCAA D1');
-insert into College values ('FLOR', 'Florida A&M University', 'Tallahassee', 'Florida', 'Southwestern Athletic Conference', 'NCAA D1');
+insert into College values ('FLOR', 'Florida A'||chr(38)||'M University', 'Tallahassee', 'Florida', 'Southwestern Athletic Conference', 'NCAA D1');
 insert into College values ('ARIO', 'Arizona State University', 'Tempe', 'Arizona', 'Pacific-12 Conference', 'NCAA D1');
-insert into College values ('ALAB', 'Alabama A&M University', 'Normal', 'Alabama', 'Southwestern Athletic Conference', 'NCAA D1');
+insert into College values ('ALAB', 'Alabama A'||chr(38)||'M University', 'Normal', 'Alabama', 'Southwestern Athletic Conference', 'NCAA D1');
 insert into College values ('MARQ', 'Marquette University', 'Milwaukee', 'Wisconsin', 'Big East Conference', 'NCAA D1');
 insert into College values ('AUBU', 'Auburn University', 'Auburn', 'Alabama', 'Southeastern Conference', 'NCAA D1');
 insert into College values ('ARKN', 'Arkansas State University', 'Jonesboro', 'Arkansas', 'Sun Belt Conference', 'NCAA D1');
@@ -106,7 +106,7 @@ insert into College values ('EASN', 'East Tennessee State University', 'Johnson 
 insert into College values ('SANG', 'San Diego State University', 'San Diego', 'California', 'Mountain West Conference', 'NCAA D1');
 insert into College values ('HOUS', 'Houston Christian University', 'Houston', 'Texas', 'Southland Conference', 'NCAA D1');
 insert into College values ('STAF', 'Stanford University', 'Stanford', 'California', 'Pacific-12 Conference', 'NCAA D1');
-insert into College values ('NORC', 'North Carolina A&T State University', 'Greensboro', 'North Carolina', 'Mid-Eastern Athletic Conference', 'NCAA D1');
+insert into College values ('NORC', 'North Carolina A'||chr(38)||'T State University', 'Greensboro', 'North Carolina', 'Mid-Eastern Athletic Conference', 'NCAA D1');
 insert into College values ('TEXH', 'Texas Tech University', 'Lubbock', 'Texas', 'Big 12 Conference', 'NCAA D1');
 insert into College values ('EASW', 'Eastern New Mexico University', 'Portales', 'New Mexico', 'Lone Star Conference', 'NCAA D2');
 insert into College values ('VILL', 'Villanova University', 'Villanova', 'Pennsylvania', 'Big East Conference', 'NCAA D1');
@@ -241,15 +241,14 @@ select * from college;
 
 -- Output Query for players example
 -- add, delete, edit, modify and print reports (select), aggregate query
-insert into college values ('VILA', 'Villanova University', 'Pennsylvania', 'Big East', '1');
-insert into players values ('LAYNLENK', 'Layne Lenkowski', 'PF', 68, 240, 0, 61, 'Villanova', 'VILA', '2003-03-15');
-insert into players values ('BENONEI', 'Ben O''Neil', 'SF', 69, 190, 0, 62, 'Villanova', 'VILA', '2003-03-15');
-insert into players values ('MELISILV', 'Melissa Silva', 'PG', 65, 165, 0, 63, 'Villanova', 'VILA', '2003-03-15');
-insert into players values ('DUDEGUY', 'Dude Guy', 'C', 59, 100, 1, 64, 'Germany', '', '2000-01-01');
-insert into stats values ('LAYNLENK','Layne Lenkowski', 45, 22, 4, 7, 0.57, 1, 2, 0.5, 2, 3, 0.67, 2, 2, 1, 1, 1, 3, 10, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5);
+insert into players values ('LAYNLENK', 'Layne Lenkowski', 'PF', 68, 240, 0, 61, 'Villanova', '2003-03-15');
+insert into players values ('BENONEI', 'Ben O''Neil', 'SF', 69, 190, 0, 62, 'Villanova', '2003-03-15');
+insert into players values ('MELISILV', 'Melissa Silva', 'PG', 65, 165, 0, 63, 'Villanova', '2003-03-15');
+insert into players values ('DUDEGUY', 'Dude Guy', 'C', 59, 100, 1, 64, 'Germany', '2000-01-01');
+insert into stats values ('LAYNLENK', 45, 22, 4, 7, 0.57, 1, 2, 0.5, 2, 3, 0.67, 2, 2, 1, 1, 1, 3, 10, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5);
 
 update players
-set height = 78
+set height_in_inches = 78
 where P_ID = 'LAYNLENK';
 
 select * from players;
@@ -260,6 +259,5 @@ select * from players;
 
 select * from stats where points_per_game = (select max(points_per_game) from stats);
 
-INSERT INTO Stats VALUES ('0000001', 33, 29.0, 5.8, 10.7, .543, 0.8, 2.7, .292, 3.1, 4.1, .748, 6.9, 0.9, 1.0, 1.0, 1.1, 2.4, 15.4, .612, .580, .253, .384, .339, 23.5, 0.29, 0.78);
-
+select * from college;
 SELECT * FROM Stats;
