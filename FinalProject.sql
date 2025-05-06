@@ -78,6 +78,26 @@ CREATE TABLE PlayersStats (
 -- add, delete, edit, modify and print reports (select), aggregate query
 
 -- Output Query for players example
+-- add, delete, edit, modify and print reports (select), aggregate query
+insert into college values ('VILA', 'Villanova University', 'Pennsylvania', 'Big East', '1');
+insert into players values ('LAYNLENK', 'Layne Lenkowski', 'PF', 68, 240, 0, 61, 'Villanova', 'VILA', '2003-03-15');
+insert into players values ('BENONEI', 'Ben O''Neil', 'SF', 69, 190, 0, 62, 'Villanova', 'VILA', '2003-03-15');
+insert into players values ('MELISILV', 'Melissa Silva', 'PG', 65, 165, 0, 63, 'Villanova', 'VILA', '2003-03-15');
+insert into players values ('DUDEGUY', 'Dude Guy', 'C', 59, 100, 1, 64, 'Germany', '', '2000-01-01');
+insert into stats values ('LAYNLENK','Layne Lenkowski', 45, 22, 4, 7, 0.57, 1, 2, 0.5, 2, 3, 0.67, 2, 2, 1, 1, 1, 3, 10, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5);
+
+update players
+set height = 78
+where P_ID = 'LAYNLENK';
+
+select * from players;
+
+delete from players where P_ID = 'DUDEGUY';
+
+select * from players;
+
+select * from stats where points_per_game = (select max(points_per_game) from stats);
+
 INSERT INTO Stats VALUES ('0000001', 33, 29.0, 5.8, 10.7, .543, 0.8, 2.7, .292, 3.1, 4.1, .748, 6.9, 0.9, 1.0, 1.0, 1.1, 2.4, 15.4, .612, .580, .253, .384, .339, 23.5, 0.29, 0.78);
 
 SELECT * FROM Stats;
