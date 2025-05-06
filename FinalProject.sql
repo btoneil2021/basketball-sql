@@ -62,7 +62,7 @@ CREATE TABLE Players (
 
 CREATE TABLE PlayersColleges (
     P_ID VARCHAR(8), 
-    C_ID VARCHAR(4), 
+    C_ID VARCHAR(8), 
     PRIMARY KEY (P_ID, C_ID), 
     FOREIGN KEY (P_ID) REFERENCES Players(P_ID),
     FOREIGN KEY (C_ID) REFERENCES College(C_ID)
@@ -70,7 +70,7 @@ CREATE TABLE PlayersColleges (
 
 CREATE TABLE PlayersStats (
     P_ID VARCHAR(8), 
-    Stats_ID VARCHAR(4), 
+    Stats_ID VARCHAR(8), 
     PRIMARY KEY (P_ID, Stats_ID), 
     FOREIGN KEY (P_ID) REFERENCES Players(P_ID),
     FOREIGN KEY (Stats_ID) REFERENCES Stats(Stats_ID)
@@ -235,17 +235,146 @@ insert into Stats values ('00000056', 38, 30.4, 5.0, 11.0, .452, 2.1, 5.9, .350,
 insert into Stats values ('00000057', 30, 32.1, 6.0, 13.6, .439, 2.0, 5.4, .366, 3.0, 3.8, .789, 6.1, 5.5, 0.4, 1.2, 2.2, 2.2, 16.9, .549, .511, .395, .279, .368, 28.1, 1.29, 2.46);
 insert into Stats values ('00000058', 32, 35.9, 6.6, 14.4, .457, 1.3, 4.8, .277, 3.7, 4.6, .804, 5.1, 2.8, 0.5, 1.2, 2.4, 2.3, 18.3, .549, .503, .335, .320, .353, 27.7, 0.65, 1.15);
 
+-- PlayersColleges Insert Statements
+-- Note: Some teams are mapped to C_ID '0000' (International/Unspecified).
+-- You may need to add specific college entries to your 'College' table for a more precise mapping.
+
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000000', 'DUKE');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000001', 'RUTG');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000002', 'RUTG');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000003', 'BAYL');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000004', 'TEXS');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000005', 'DUKE');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000006', 'DUKE');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000007', 'OKLS');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000008', 'LOYA');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000009', 'GEOS');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000010', 'EASI');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000011', 'MICH');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000012', 'SOUH');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000013', 'UNEI');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000014', '0000');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000015', '0000');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000016', '0000');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000017', 'GEOO');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000018', '0000');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000019', 'SAIS');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000020', '0000');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000021', 'MICH');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000022', 'EASI');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000023', 'COLV');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000024', 'FLOR');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000025', 'ARIO');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000026', '0000');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000027', 'ALAB');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000028', 'MARQ');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000029', 'FLOR');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000030', 'AUBU');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000031', '0000');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000032', 'ARKN');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000033', '0000');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000034', 'CREI');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000035', '0000');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000036', 'ARKN');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000037', 'EASN');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000038', 'AUBU');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000039', 'DUKE');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000040', 'SANG');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000041', 'HOUS');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000042', 'STAF');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000043', '0000');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000044', '0000');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000045', 'NORC');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000046', 'TEXH');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000047', 'DUKE');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000048', '0000');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000049', '0000');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000050', 'DUKE');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000051', 'VILL');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000052', '0000');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000053', 'EASK');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000054', 'HOUS');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000055', 'UNFI');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000056', 'FLOR');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000057', 'PRIC');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('00000058', 'WAKE');
+
+
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000000', '00000000');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000001', '00000001');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000002', '00000002');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000003', '00000003');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000004', '00000004');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000005', '00000005');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000006', '00000006');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000007', '00000007');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000008', '00000008');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000009', '00000009');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000010', '00000010');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000011', '00000011');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000012', '00000012');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000013', '00000013');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000014', '00000014');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000015', '00000015');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000016', '00000016');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000017', '00000017');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000018', '00000018');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000019', '00000019');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000020', '00000020');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000021', '00000021');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000022', '00000022');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000023', '00000023');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000024', '00000024');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000025', '00000025');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000026', '00000026');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000027', '00000027');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000028', '00000028');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000029', '00000029');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000030', '00000030');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000031', '00000031');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000032', '00000032');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000033', '00000033');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000034', '00000034');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000035', '00000035');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000036', '00000036');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000037', '00000037');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000038', '00000038');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000039', '00000039');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000040', '00000040');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000041', '00000041');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000042', '00000042');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000043', '00000043');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000044', '00000044');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000045', '00000045');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000046', '00000046');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000047', '00000047');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000048', '00000048');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000049', '00000049');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000050', '00000050');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000051', '00000051');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000052', '00000052');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000053', '00000053');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000054', '00000054');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000055', '00000055');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000056', '00000056');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000057', '00000057');
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('00000058', '00000058');
+
 select * from stats;
 select * from players;
 select * from college;
 
--- Output Query for players example
 -- add, delete, edit, modify and print reports (select), aggregate query
 insert into players values ('LAYNLENK', 'Layne Lenkowski', 'PF', 68, 240, 0, 61, 'Villanova', '2003-03-15');
 insert into players values ('BENONEI', 'Ben O''Neil', 'SF', 69, 190, 0, 62, 'Villanova', '2003-03-15');
 insert into players values ('MELISILV', 'Melissa Silva', 'PG', 65, 165, 0, 63, 'Villanova', '2003-03-15');
 insert into players values ('DUDEGUY', 'Dude Guy', 'C', 59, 100, 1, 64, 'Germany', '2000-01-01');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('LAYNLENK', 'VILL');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('BENONEI', 'VILL');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('MELISILV', 'VILL');
+INSERT INTO PlayersColleges (P_ID, C_ID) VALUES ('DUDEGUY', '0000');
 insert into stats values ('LAYNLENK', 45, 22, 4, 7, 0.57, 1, 2, 0.5, 2, 3, 0.67, 2, 2, 1, 1, 1, 3, 10, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5);
+INSERT INTO PlayersStats (P_ID, Stats_ID) VALUES ('LAYNLENK', 'LAYNLENK');
 
 update players
 set height_in_inches = 78
@@ -253,6 +382,7 @@ where P_ID = 'LAYNLENK';
 
 select * from players;
 
+delete from playerscolleges where P_ID = 'DUDEGUY';
 delete from players where P_ID = 'DUDEGUY';
 
 select * from players;
